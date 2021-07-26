@@ -1,2 +1,2 @@
-# WaveX
-WaveX Game Engine
+# Moana
+Moana Game Engine
