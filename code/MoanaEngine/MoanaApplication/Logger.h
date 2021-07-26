@@ -1,8 +1,5 @@
 #pragma once
 
-#include <memory>
-#include <unordered_map>
-
 #pragma warning(push, 0)        
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
@@ -46,7 +43,7 @@ namespace Moana {
 		static const char* m_EngineLoggers[(int)eEngineLoggers::LOGGER_NUM];
 		static const char* m_ClientLoggers[(int)eClientLoggers::LOGGER_NUM];
 
-		std::string m_ownLoggerName = { "MOANA_LOGGER" };
+		std::string m_ownLoggerName{ "MOANA_LOGGER" };
 		std::shared_ptr<spdlog::logger> m_pSelfLogger;
 		std::shared_ptr<spdlog::logger> m_vSpdEngineLoggers[(int)eEngineLoggers::LOGGER_NUM];
 		std::shared_ptr<spdlog::logger> m_vSpdClientLoggers[(int)eClientLoggers::LOGGER_NUM];

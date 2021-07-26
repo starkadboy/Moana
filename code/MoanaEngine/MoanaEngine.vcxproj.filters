@@ -10,6 +10,7 @@
     <ClInclude Include="Events\KeyEvents.h" />
     <ClInclude Include="Events\AppEvents.h" />
     <ClInclude Include="Events\MouseEvents.h" />
+    <ClInclude Include="PrecompiledHeaders.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\MoanaEngine\MoanaApplication\MoanaApplication.cpp" />

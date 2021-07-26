@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-#include <functional>
 #include "../MoanaApplication/Core.h"
 
 namespace Moana {

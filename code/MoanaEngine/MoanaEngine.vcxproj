@@ -16,6 +16,7 @@
     <ClInclude Include="..\MoanaEngine\MoanaApplication\EntryPoint.h" />
     <ClInclude Include="..\MoanaEngine\MoanaApplication\MoanaApplication.h" />
     <ClInclude Include="Events\AppEvents.h" />
+    <ClInclude Include="PrecompiledHeaders.h" />
     <ClInclude Include="Events\EventSystem.h" />
     <ClInclude Include="Events\KeyEvents.h" />
     <ClInclude Include="Events\MouseEvents.h" />
@@ -73,7 +74,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>MOA_WINDOWS;MOA_ENGINE_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\$(ProjectName)\External\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\$(ProjectName);$(SolutionDir)\$(ProjectName)\External\spdlog\include</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>PrecompiledHeaders.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

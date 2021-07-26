@@ -1,3 +1,4 @@
+#include "PrecompiledHeaders.h"
 #include "Logger.h"
 
 std::shared_ptr<Moana::Logger> Moana::Logger::s_pLogger;
