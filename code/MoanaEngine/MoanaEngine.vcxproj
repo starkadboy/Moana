@@ -15,7 +15,10 @@
     <ClInclude Include="..\MoanaEngine\MoanaApplication\Core.h" />
     <ClInclude Include="..\MoanaEngine\MoanaApplication\EntryPoint.h" />
     <ClInclude Include="..\MoanaEngine\MoanaApplication\MoanaApplication.h" />
-    <ClInclude Include="Events\Event.h" />
+    <ClInclude Include="Events\AppEvents.h" />
+    <ClInclude Include="Events\EventSystem.h" />
+    <ClInclude Include="Events\KeyEvents.h" />
+    <ClInclude Include="Events\MouseEvents.h" />
     <ClInclude Include="MoanaApplication\Logger.h" />
   </ItemGroup>
   <ItemGroup>

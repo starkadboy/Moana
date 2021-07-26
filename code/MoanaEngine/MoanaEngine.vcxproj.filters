@@ -6,7 +6,10 @@
     <ClInclude Include="..\MoanaEngine\MoanaApplication\EntryPoint.h" />
     <ClInclude Include="..\MoanaEngine\MoanaApplication\MoanaApplication.h" />
     <ClInclude Include="MoanaApplication\Logger.h" />
-    <ClInclude Include="Events\Event.h" />
+    <ClInclude Include="Events\EventSystem.h" />
+    <ClInclude Include="Events\KeyEvents.h" />
+    <ClInclude Include="Events\AppEvents.h" />
+    <ClInclude Include="Events\MouseEvents.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\MoanaEngine\MoanaApplication\MoanaApplication.cpp" />
