@@ -47,7 +47,7 @@ project "MoanaEngine"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "on"
 		systemversion "latest"
 
 		defines
@@ -91,7 +91,7 @@ project "Sandbox"
 
 	links
 	{
-		"Moana"
+		"MoanaEngine"
 	}
 
 	filter "system:windows"

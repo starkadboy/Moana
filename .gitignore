@@ -1,4 +1,7 @@
-
 bin/
-
 code/.vs/
+.vs/
+*.sln
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj
