@@ -1,3 +1,3 @@
-cd vendor/bin/premake5
+cd vendor/premake5
 premake5.exe vs2019
 PAUSE

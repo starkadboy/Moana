@@ -11,9 +11,9 @@ outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"] = "vendor/src/glfw/include"
+IncludeDir["GLFW"] = "vendor/glfw/include"
 
-include "vendor/src/glfw"
+include "vendor/glfw"
 
 project "MoanaEngine"
 	location "code"
@@ -35,7 +35,7 @@ project "MoanaEngine"
 	includedirs
 	{
 		"code/%{prj.name}",
-		"vendor/src/spdlog/include",
+		"vendor/spdlog/include",
 		"%{IncludeDir.GLFW}"
 	}
 
@@ -85,7 +85,7 @@ project "Sandbox"
 
 	includedirs
 	{
-		"vendor/src/spdlog/include",
+		"vendor/spdlog/include",
 		"code/MoanaEngine"
 	}
 

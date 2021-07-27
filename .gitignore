@@ -5,4 +5,4 @@ code/.vs/
 *.vcxproj.filters
 *.vcxproj.user
 *.vcxproj
-vendor/src/glfw/bin-int/
+vendor/glfw/bin-int/
