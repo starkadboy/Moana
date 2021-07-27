@@ -7,7 +7,7 @@ workspace "Moana"
 		"Release"
 	}
 
-outputdir = "%{cfg.buildcfg}_%{cfg.system}%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
