@@ -10,24 +10,26 @@ namespace Moana {
 		inline int GetX() const { return m_X; }
 		inline int GetY() const { return m_Y; }
 
-		virtual EventType	GetEventType() const { return EventType::MOUSE_MOVED; }
+		static EventType	GetStaticType() { return EventType::MOA_MOUSE_MOVED; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "MouseMoved"; }
 	private:
-		int m_X{ 0.0f };
-		int m_Y{ 0.0f };
+		float m_X{ 0.0f };
+		float m_Y{ 0.0f };
 	};
 
 	class MOA_API_IE MouseScrolledEvent : public Event {
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset) : m_xOffset(xOffset), m_yOffset(yOffset) {};
-		inline int GetXOffset() const { return m_xOffset; }
-		inline int GetYOffset() const { return m_yOffset; }
+		inline float GetXOffset() const { return m_xOffset; }
+		inline float GetYOffset() const { return m_yOffset; }
 
-		virtual EventType	GetEventType() const { return EventType::MOUSE_SCROLLED; }
+		static EventType	GetStaticType() { return EventType::MOA_MOUSE_SCROLLED; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "MouseScrolled"; }
 	private:
-		int m_xOffset{ 0.0f };
-		int m_yOffset{ 0.0f };
+		float m_xOffset{ 0.0f };
+		float m_yOffset{ 0.0f };
 	};
 
 	class MOA_API_IE MouseButtonPressedEvent : public Event {
@@ -35,7 +37,8 @@ namespace Moana {
 		MouseButtonPressedEvent(int button) : m_button(button) {};
 		inline int GetButton() const { return m_button; }
 
-		virtual EventType	GetEventType() const { return EventType::MOUSE_BUTTON_PRESSED; }
+		static EventType	GetStaticType() { return EventType::MOA_MOUSE_BUTTON_PRESSED; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "MouseButtonPressed"; }
 	private:
 		int m_button{ -1 };
@@ -46,7 +49,7 @@ namespace Moana {
 		MouseButtonReleasedEvent(int button) : m_button(button) {};
 		inline int GetButton() const { return m_button; }
 
-		virtual EventType	GetEventType() const { return EventType::MOUSE_BUTTON_RELEASED; }
+		virtual EventType	GetEventType() const { return EventType::MOA_MOUSE_BUTTON_RELEASED; }
 		virtual const char* GetName() const { return "MouseButtonReleased"; }
 	private:
 		int m_button{ -1 };

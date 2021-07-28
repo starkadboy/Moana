@@ -8,7 +8,8 @@ namespace Moana {
 	public:
 		AppWindowCloseEvent() {};
 
-		virtual EventType	GetEventType() const { return EventType::APP_WINDOW_CLOSE; }
+		static EventType	GetStaticType() { return EventType::MOA_APP_WINDOW_CLOSE; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "AppWindowClose"; }
 	};
 
@@ -18,7 +19,8 @@ namespace Moana {
 		inline unsigned int GetWidth() const { return m_Width; }
 		inline unsigned int GetHeight() const { return m_Height; }
 
-		virtual EventType	GetEventType() const { return EventType::APP_WINDOW_RESIZE; }
+		static EventType	GetStaticType() { return EventType::MOA_APP_WINDOW_RESIZE; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "AppWindowResize"; }
 	private:
 		unsigned int m_Width{ 0 };
@@ -29,7 +31,8 @@ namespace Moana {
 	public:
 		AppWindowFocusEvent() {};
 
-		virtual EventType	GetEventType() const { return EventType::APP_WINDOW_FOCUS; }
+		static EventType	GetStaticType() { return EventType::MOA_APP_WINDOW_FOCUS; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "AppWindowFocus"; }
 	};
 
@@ -37,7 +40,8 @@ namespace Moana {
 	public:
 		AppWindowLostFocusEvent() {};
 
-		virtual EventType	GetEventType() const { return EventType::APP_WINDOW_LOST_FOCUS; }
+		static EventType	GetStaticType() { return EventType::MOA_APP_WINDOW_LOST_FOCUS; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "AppWindowLostFocus"; }
 	};
 
@@ -45,7 +49,8 @@ namespace Moana {
 	public:
 		AppWindowMovedEvent() {};
 
-		virtual EventType	GetEventType() const { return EventType::APP_WINDOW_MOVED; }
+		static EventType	GetStaticType() { return EventType::MOA_APP_WINDOW_MOVED; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "AppWindowMoved"; }
 	};
 

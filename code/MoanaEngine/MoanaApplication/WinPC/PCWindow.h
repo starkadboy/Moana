@@ -27,6 +27,7 @@ namespace Moana {
 
 		virtual void Init(const WindowProperties& windowProperties);
 		virtual void DeInit();
+		virtual void InitCallbacks();
 
 		GLFWwindow*		m_pWindow{ nullptr };
 		WindowContext	m_Context;

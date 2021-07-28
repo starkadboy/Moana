@@ -16,8 +16,9 @@ namespace Moana {
 	public:
 		KeyPressedEvent(int keyCode, bool bIsRepeated) : KeyEvent(keyCode) {};
 		inline bool	GetIsRepeated() const { return m_bIsRepeated; }
-		
-		virtual EventType	GetEventType() const { return EventType::KEY_PRESSED; }
+
+		static EventType	GetStaticType() { return EventType::MOA_KEY_PRESSED; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "KeyPressed"; }
 	private:
 		bool m_bIsRepeated{ false };
@@ -27,7 +28,8 @@ namespace Moana {
 	public:
 		KeyReleasedEvent(int keyCode) : KeyEvent(keyCode) {};
 
-		virtual EventType	GetEventType() const { return EventType::KEY_RELEASED; }
+		static EventType	GetStaticType() { return EventType::MOA_KEY_RELEASED; }
+		virtual EventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "KeyReleased"; }
 	};
 }

@@ -29,7 +29,6 @@ namespace Moana {
 	public:
 		virtual EventType	GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
-	private:
 		bool m_bHandled;
 	};
 
