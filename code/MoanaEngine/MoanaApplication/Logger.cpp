@@ -4,7 +4,8 @@
 std::shared_ptr<Moana::Logger> Moana::Logger::s_pLogger;
 
 const char* Moana::Logger::m_EngineLoggers[(int)eEngineLoggers::LOGGER_NUM] {
-	"CORE"
+	"CORE",
+	"ASSERT"
 };
 
 const char* Moana::Logger::m_ClientLoggers[(int)eClientLoggers::LOGGER_NUM]{

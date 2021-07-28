@@ -6,3 +6,5 @@
 		#define MOA_API_IE __declspec(dllimport)
 	#endif
 #endif
+
+//#define MOA_NO_ASSERTS

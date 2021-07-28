@@ -26,6 +26,7 @@ namespace Moana {
 		//To add a new logger, simply add a new eEngineLoggers + new logger's name into m_EngineLoggers
 		enum class eEngineLoggers {
 			LOGGER_CORE,
+			LOGGER_ASSERT,
 			LOGGER_NUM
 		};
 
