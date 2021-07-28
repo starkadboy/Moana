@@ -1,6 +1,7 @@
 #include "PrecompiledHeaders.h"
 #include "PCWindow.h"
-#include "../../Moana.h"
+#include "../Logger.h"
+#include "../MoanaAssert.h"
 
 Moana::Window*
 Moana::Window::Create(const WindowProperties& windowProperties) {

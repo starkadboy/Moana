@@ -81,6 +81,7 @@ project "Sandbox"
 	{
 		"code/%{prj.name}/**.h",
 		"code/%{prj.name}/**.cpp"
+		"%{IncludeDir.GLFW}"
 	}
 
 	includedirs

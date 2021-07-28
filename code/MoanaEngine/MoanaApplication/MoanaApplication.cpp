@@ -2,8 +2,8 @@
 #include "MoanaApplication.h"
 
 Moana::MoanaApplication::MoanaApplication() {
-	//WindowProperties defaultWindowProperties = WindowProperties();
-	//m_pWindow = std::unique_ptr<Window>(Window::Create(defaultWindowProperties));
+	WindowProperties defaultWindowProperties = WindowProperties();
+	m_pWindow = std::unique_ptr<Window>(Window::Create(defaultWindowProperties));
 }
 
 Moana::MoanaApplication::~MoanaApplication() {
