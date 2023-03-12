@@ -1,14 +1,14 @@
 #include "Moana.h"
 
-class SanboxApp : public Moana::MoanaApplication {
+class CSanboxApp : public Moana::CMoanaApplication {
 public:
-	SanboxApp() {};
-	~SanboxApp() {};
+	CSanboxApp() {};
+	~CSanboxApp() {};
 };
 
-Moana::MoanaApplication*
+Moana::CMoanaApplication*
 CreateMoanaApplication() {
-	MOA_LOG_TRACE(Moana::Logger::eClientLoggers::LOGGER_MAIN, "Creating Moana Client Application");
-	Moana::MoanaApplication* pSandboxApp = new SanboxApp();
+	MOA_LOG_TRACE(Moana::CLogger::eClientLoggers::LOGGER_MAIN, "Creating Moana Client Application");
+	Moana::CMoanaApplication* pSandboxApp = new CSanboxApp();
 	return pSandboxApp;
 };

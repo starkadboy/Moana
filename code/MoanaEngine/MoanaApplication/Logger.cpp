@@ -1,19 +1,19 @@
 #include "PrecompiledHeaders.h"
 #include "Logger.h"
 
-std::shared_ptr<Moana::Logger> Moana::Logger::s_pLogger;
+std::shared_ptr<Moana::CLogger> Moana::CLogger::s_pLogger;
 
-const char* Moana::Logger::m_EngineLoggers[(int)eEngineLoggers::LOGGER_NUM] {
+const char* Moana::CLogger::m_EngineLoggers[(int)eEngineLoggers::LOGGER_NUM] {
 	"CORE",
 	"ASSERT"
 };
 
-const char* Moana::Logger::m_ClientLoggers[(int)eClientLoggers::LOGGER_NUM]{
+const char* Moana::CLogger::m_ClientLoggers[(int)eClientLoggers::LOGGER_NUM]{
 	"MOANA_APP"
 };
 
 void
-Moana::Logger::Init() {
+Moana::CLogger::Init() {
 	spdlog::set_pattern("%^[%T] %n: %v%$");
 	spdlog::set_level(spdlog::level::trace);
 
@@ -30,14 +30,14 @@ Moana::Logger::Init() {
 }
 
 void
-Moana::Logger::CreateLoggerModule() {
+Moana::CLogger::CreateLoggerModule() {
 	if (!s_pLogger) {
-		s_pLogger = std::shared_ptr<Logger>(new Logger());
+		s_pLogger = std::shared_ptr<CLogger>(new CLogger());
 	}
 }
 
 std::shared_ptr<spdlog::logger>
-Moana::Logger::GetEngineLogger(eEngineLoggers logger) {
+Moana::CLogger::GetEngineLogger(eEngineLoggers logger) {
 	if (!s_pLogger) {
 		CreateLoggerModule();
 		s_pLogger->m_pSelfLogger->error("CRITICAL: Logger Module was not initialized!");
@@ -51,7 +51,7 @@ Moana::Logger::GetEngineLogger(eEngineLoggers logger) {
 }
 
 std::shared_ptr<spdlog::logger>
-Moana::Logger::GetClientLogger(eClientLoggers logger) {
+Moana::CLogger::GetClientLogger(eClientLoggers logger) {
 	if (!s_pLogger) {
 		CreateLoggerModule();
 		s_pLogger->m_pSelfLogger->error("CRITICAL: Logger Module was not initialized!");

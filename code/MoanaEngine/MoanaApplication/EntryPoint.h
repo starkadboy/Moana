@@ -5,13 +5,13 @@
 
 #ifdef MOA_WINDOWS
 
-extern Moana::MoanaApplication* CreateMoanaApplication();
+extern Moana::CMoanaApplication* CreateMoanaApplication();
 	
 int main(int argc, char** argv) {
-	Moana::Logger::CreateLoggerModule();
-	Moana::MoanaApplication* pApplication = CreateMoanaApplication();
+	Moana::CLogger::CreateLoggerModule();
+	Moana::CMoanaApplication* pApplication = CreateMoanaApplication();
 	pApplication->Run();
-	MOA_LOG_TRACE_ENGINE(Moana::Logger::eEngineLoggers::LOGGER_CORE, "Finished running; deleting Moana Application...");
+	MOA_LOG_TRACE_ENGINE(Moana::CLogger::eEngineLoggers::LOGGER_CORE, "Finished running; deleting Moana Application...");
 	delete pApplication;
 	return 0;
 }

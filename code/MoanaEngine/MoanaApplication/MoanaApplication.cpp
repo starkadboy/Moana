@@ -2,20 +2,20 @@
 #include "MoanaApplication.h"
 #include "Logger.h"
 
-Moana::MoanaApplication::MoanaApplication() {
+Moana::CMoanaApplication::CMoanaApplication() {
 	m_bAppRunning = true;
-	WindowProperties defaultWindowProperties = WindowProperties();
-	m_pWindow = std::unique_ptr<Window>(Window::Create(defaultWindowProperties));
+	CWindowProperties defaultWindowProperties = CWindowProperties();
+	m_pWindow = std::unique_ptr<CWindow>(CWindow::Create(defaultWindowProperties));
 	if (m_pWindow != nullptr) {
-		m_pWindow->SetEventCallback(std::bind(&MoanaApplication::OnEvent, this, std::placeholders::_1));
+		m_pWindow->SetEventCallback(std::bind(&CMoanaApplication::OnEvent, this, std::placeholders::_1));
 	}
 }
 
-Moana::MoanaApplication::~MoanaApplication() {
+Moana::CMoanaApplication::~CMoanaApplication() {
 }
 
 int
-Moana::MoanaApplication::Run() {
+Moana::CMoanaApplication::Run() {
 	while (m_bAppRunning) {
 		if (m_pWindow != nullptr) {
 			m_pWindow->OnUpdate();
@@ -25,14 +25,14 @@ Moana::MoanaApplication::Run() {
 }
 
 void
-Moana::MoanaApplication::OnEvent(Event& e) {
-	//MOA_LOG_INFO_ENGINE(Logger::eEngineLoggers::LOGGER_CORE, "Event {0} of type {1} happened!", e.GetName(), e.GetEventType());
-	EventDispatcher eventDispatcher(e);
-	eventDispatcher.Dispatch<AppWindowCloseEvent>(std::bind(&MoanaApplication::OnAppCloseEvent, this, std::placeholders::_1));
+Moana::CMoanaApplication::OnEvent(CEvent& e) {
+	//MOA_LOG_INFO_ENGINE(CLogger::eEngineLoggers::LOGGER_CORE, "CEvent {0} of type {1} happened!", e.GetName(), e.GetEventType());
+	CEventDispatcher eventDispatcher(e);
+	eventDispatcher.Dispatch<CAppWindowCloseEvent>(std::bind(&CMoanaApplication::OnAppCloseEvent, this, std::placeholders::_1));
 }
 
 bool
-Moana::MoanaApplication::OnAppCloseEvent(AppWindowCloseEvent& e) {
+Moana::CMoanaApplication::OnAppCloseEvent(CAppWindowCloseEvent& e) {
 	m_bAppRunning = false;
 	return true;
 }

@@ -5,16 +5,16 @@
 #include "Events/AppEvents.h"
 
 namespace Moana {
-	class MOA_API_IE MoanaApplication {
+	class MOA_API_IE CMoanaApplication {
 	public:
-		MoanaApplication();
-		~MoanaApplication();
+		CMoanaApplication();
+		~CMoanaApplication();
 		int Run();
 	private:
-		void OnEvent(Event& e);
-		bool OnAppCloseEvent(AppWindowCloseEvent& e);
+		void OnEvent(CEvent& e);
+		bool OnAppCloseEvent(CAppWindowCloseEvent& e);
 
-		std::unique_ptr<Window> m_pWindow{ nullptr };
-		bool					m_bAppRunning{ true };
+		std::unique_ptr<CWindow> m_pWindow{ nullptr };
+		bool					 m_bAppRunning{ true };
 	};
 }

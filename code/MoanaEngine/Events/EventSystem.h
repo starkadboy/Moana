@@ -4,7 +4,7 @@
 
 namespace Moana {
 
-	enum class EventType {
+	enum class eEventType {
 		NONE = -1,
 		//app events
 		MOA_APP_WINDOW_CLOSE,
@@ -25,17 +25,17 @@ namespace Moana {
 		MOA_MOUSE_SCROLLED
 	};
 
-	class MOA_API_IE Event {
+	class MOA_API_IE CEvent {
 	public:
-		virtual EventType	GetEventType() const = 0;
+		virtual eEventType	GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		bool m_bHandled;
 	};
 
-	class EventDispatcher
+	class CEventDispatcher
 	{
 	public:
-		EventDispatcher(Event& e) : m_Event(e) {};
+		CEventDispatcher(CEvent& e) : m_Event(e) {};
 		template<typename T>
 		bool Dispatch(std::function<bool(T&)> eventFunction) {
 			if (m_Event.GetEventType() == T::GetStaticType()) {
@@ -45,6 +45,6 @@ namespace Moana {
 			return false;
 		}
 	private:
-		Event& m_Event;
+		CEvent& m_Event;
 	};
 }

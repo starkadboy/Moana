@@ -4,32 +4,32 @@
 
 namespace Moana {
 
-	class MOA_API_IE KeyEvent : public Event {
+	class MOA_API_IE CKeyEvent : public CEvent {
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
 	protected:
-		KeyEvent(int keyCode) : m_KeyCode(keyCode) {};
+		CKeyEvent(int keyCode) : m_KeyCode(keyCode) {};
 		int m_KeyCode{ -1 };
 	};
 
-	class MOA_API_IE KeyPressedEvent : public KeyEvent {
+	class MOA_API_IE CKeyPressedEvent : public CKeyEvent {
 	public:
-		KeyPressedEvent(int keyCode, bool bIsRepeated) : KeyEvent(keyCode) {};
+		CKeyPressedEvent(int keyCode, bool bIsRepeated) : CKeyEvent(keyCode) {};
 		inline bool	GetIsRepeated() const { return m_bIsRepeated; }
 
-		static EventType	GetStaticType() { return EventType::MOA_KEY_PRESSED; }
-		virtual EventType	GetEventType() const { return GetStaticType(); }
+		static eEventType	GetStaticType() { return eEventType::MOA_KEY_PRESSED; }
+		virtual eEventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "KeyPressed"; }
 	private:
 		bool m_bIsRepeated{ false };
 	};
 
-	class MOA_API_IE KeyReleasedEvent : public KeyEvent {
+	class MOA_API_IE CKeyReleasedEvent : public CKeyEvent {
 	public:
-		KeyReleasedEvent(int keyCode) : KeyEvent(keyCode) {};
+		CKeyReleasedEvent(int keyCode) : CKeyEvent(keyCode) {};
 
-		static EventType	GetStaticType() { return EventType::MOA_KEY_RELEASED; }
-		virtual EventType	GetEventType() const { return GetStaticType(); }
+		static eEventType	GetStaticType() { return eEventType::MOA_KEY_RELEASED; }
+		virtual eEventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "KeyReleased"; }
 	};
 }

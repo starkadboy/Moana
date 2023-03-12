@@ -4,52 +4,52 @@
 
 namespace Moana {
 
-	class MOA_API_IE MouseMovedEvent : public Event {
+	class MOA_API_IE CMouseMovedEvent : public CEvent {
 	public:
-		MouseMovedEvent(float x, float y) : m_X(x), m_Y(y) {};
-		inline int GetX() const { return m_X; }
-		inline int GetY() const { return m_Y; }
+		CMouseMovedEvent(float x, float y) : m_X(x), m_Y(y) {};
+		inline float GetX() const { return m_X; }
+		inline float GetY() const { return m_Y; }
 
-		static EventType	GetStaticType() { return EventType::MOA_MOUSE_MOVED; }
-		virtual EventType	GetEventType() const { return GetStaticType(); }
+		static eEventType	GetStaticType() { return eEventType::MOA_MOUSE_MOVED; }
+		virtual eEventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "MouseMoved"; }
 	private:
 		float m_X{ 0.0f };
 		float m_Y{ 0.0f };
 	};
 
-	class MOA_API_IE MouseScrolledEvent : public Event {
+	class MOA_API_IE CMouseScrolledEvent : public CEvent {
 	public:
-		MouseScrolledEvent(float xOffset, float yOffset) : m_xOffset(xOffset), m_yOffset(yOffset) {};
+		CMouseScrolledEvent(float xOffset, float yOffset) : m_xOffset(xOffset), m_yOffset(yOffset) {};
 		inline float GetXOffset() const { return m_xOffset; }
 		inline float GetYOffset() const { return m_yOffset; }
 
-		static EventType	GetStaticType() { return EventType::MOA_MOUSE_SCROLLED; }
-		virtual EventType	GetEventType() const { return GetStaticType(); }
+		static eEventType	GetStaticType() { return eEventType::MOA_MOUSE_SCROLLED; }
+		virtual eEventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "MouseScrolled"; }
 	private:
 		float m_xOffset{ 0.0f };
 		float m_yOffset{ 0.0f };
 	};
 
-	class MOA_API_IE MouseButtonPressedEvent : public Event {
+	class MOA_API_IE CMouseButtonPressedEvent : public CEvent {
 	public:
-		MouseButtonPressedEvent(int button) : m_button(button) {};
+		CMouseButtonPressedEvent(int button) : m_button(button) {};
 		inline int GetButton() const { return m_button; }
 
-		static EventType	GetStaticType() { return EventType::MOA_MOUSE_BUTTON_PRESSED; }
-		virtual EventType	GetEventType() const { return GetStaticType(); }
+		static eEventType	GetStaticType() { return eEventType::MOA_MOUSE_BUTTON_PRESSED; }
+		virtual eEventType	GetEventType() const { return GetStaticType(); }
 		virtual const char* GetName() const { return "MouseButtonPressed"; }
 	private:
 		int m_button{ -1 };
 	};
 
-	class MOA_API_IE MouseButtonReleasedEvent : public Event {
+	class MOA_API_IE CMouseButtonReleasedEvent : public CEvent {
 	public:
-		MouseButtonReleasedEvent(int button) : m_button(button) {};
+		CMouseButtonReleasedEvent(int button) : m_button(button) {};
 		inline int GetButton() const { return m_button; }
 
-		virtual EventType	GetEventType() const { return EventType::MOA_MOUSE_BUTTON_RELEASED; }
+		virtual eEventType	GetEventType() const { return eEventType::MOA_MOUSE_BUTTON_RELEASED; }
 		virtual const char* GetName() const { return "MouseButtonReleased"; }
 	private:
 		int m_button{ -1 };

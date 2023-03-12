@@ -17,8 +17,9 @@ include "vendor/glfw"
 
 project "MoanaEngine"
 	location "code"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin/" .. outputdir .. "/temp/%{prj.name}")
@@ -56,11 +57,6 @@ project "MoanaEngine"
 			"MOA_ENGINE_DLL"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-		}
-
 	filter "configurations:Debug"
 		defines "MOA_DEBUG"
 		symbols "on"
@@ -80,7 +76,7 @@ project "Sandbox"
 	files
 	{
 		"code/%{prj.name}/**.h",
-		"code/%{prj.name}/**.cpp"
+		"code/%{prj.name}/**.cpp",
 		"%{IncludeDir.GLFW}"
 	}
 

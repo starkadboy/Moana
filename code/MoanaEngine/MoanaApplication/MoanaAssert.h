@@ -12,7 +12,7 @@ namespace Moana {
 	MoanaAssert(bool bCondition, const char* pFile, int line, const char* pMessage) {
 	#ifndef MOA_NO_ASSERTS
 		if (!bCondition) {
-			MOA_LOG_ERROR_ENGINE(Logger::eEngineLoggers::LOGGER_ASSERT, "Assert in {0}:{1}: {2}", pFile, line, pMessage);
+			MOA_LOG_ERROR_ENGINE(CLogger::eEngineLoggers::LOGGER_ASSERT, "Assert in {0}:{1}: {2}", pFile, line, pMessage);
 		#ifdef MOA_WINDOWS
 			__debugbreak();
 		#endif
